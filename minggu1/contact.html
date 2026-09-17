@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Faiq</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <a class="brand" href="index.html">Faiq<span>.</span></a>
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a class="active" href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-box">
+                <h2 class="contact-section-title">Lets Connect!</h2>
+                <div class="line"></div>
+
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="email">Alamat Email <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" placeholder="nama@email.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="kategori">Kategori / Keperluan <span class="required">*</span></label>
+                        <select id="kategori" name="kategori" required>
+                            <option value="" disabled selected>-- Pilih Keperluan --</option>
+                            <option value="konsultasi">Konsultasi</option>
+                            <option value="kolaborasi">Kolaborasi Proyek</option>
+                            <option value="pertanyaan">Pertanyaan Umum</option>
+                            <option value="lainnya">Lainnya</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pesan">Pesan <span class="required">*</span></label>
+                        <textarea id="pesan" name="pesan" rows="5" placeholder="Tuliskan detail pesan atau deskripsi proyek Anda di sini..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Kirim Pesan!</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
