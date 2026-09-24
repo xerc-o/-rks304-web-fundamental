@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manajemen Produk</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans antialiased">
+  <div class="min-h-screen flex flex-col md:flex-row">
+    <aside class="w-full md:w-64 bg-slate-800 text-white flex flex-col justify-between p-4">
+      <div>
+        <div class="text-xl font-bold mb-6 text-center text-indigo-400">AdminPanel</div>
+        <nav class="space-y-1">
+          <a href="dashboard.html" class="block px-4 py-2.5 rounded hover:bg-slate-700 transition">Dashboard</a>
+          <a href="products.html" class="block px-4 py-2.5 bg-slate-700 rounded text-white font-medium">Products</a>
+          <a href="#" class="block px-4 py-2.5 rounded hover:bg-slate-700 transition">Users</a>
+          <a href="#" class="block px-4 py-2.5 rounded hover:bg-slate-700 transition">Setting</a>
+        </nav>
+      </div>
+      <a href="index.html" class="block text-center bg-red-600 hover:bg-red-700 py-2 rounded text-sm font-medium transition mt-6">Logout</a>
+    </aside>
+
+    <div class="flex-1 flex flex-col min-w-0">
+      <header class="bg-white shadow px-6 py-4 flex justify-between items-center">
+        <h1 class="text-lg font-semibold text-gray-700">Daftar Produk</h1>
+        <div class="text-sm text-gray-500">Halo, <span class="font-bold text-gray-700">Administrator</span></div>
+      </header>
+
+      <main class="flex-1 p-6">
+        <div class="flex justify-between items-center mb-6">
+          <h2 class="text-2xl font-bold text-gray-800">Manajemen Produk</h2>
+          <a href="add-product.html" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg font-medium text-sm transition">
+            + Add Product
+          </a>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-x-auto">
+          <table class="w-full text-left text-sm text-gray-600">
+            <thead class="bg-gray-50 text-gray-700 uppercase border-b">
+              <tr>
+                <th class="px-6 py-3 w-16">No</th>
+                <th class="px-6 py-3">Name</th>
+                <th class="px-6 py-3">Stock</th>
+                <th class="px-6 py-3 text-center w-40">Action</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200">
+              <tr>
+                <td class="px-6 py-4">1</td>
+                <td class="px-6 py-4 font-medium text-gray-900">Iga Bakar</td>
+                <td class="px-6 py-4">25</td>
+                <td class="px-6 py-4 text-center space-x-2">
+                  <a href="edit-product.html" class="text-blue-600 hover:underline font-medium">Edit</a>
+                  <button class="text-red-600 hover:underline font-medium">Delete</button>
+                </td>
+              </tr>
+              <tr>
+                <td class="px-6 py-4">2</td>
+                <td class="px-6 py-4 font-medium text-gray-900">Ayam Sup</td>
+                <td class="px-6 py-4">120</td>
+                <td class="px-6 py-4 text-center space-x-2">
+                  <a href="edit-product.html" class="text-blue-600 hover:underline font-medium">Edit</a>
+                  <button class="text-red-600 hover:underline font-medium">Delete</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </main>
+
+      <footer class="bg-white border-t p-4 text-center text-sm text-gray-500">
+        &copy; 2026 Admin Dashboard. All rights reserved.
+      </footer>
+    </div>
+  </div>
+</body>
+</html>
