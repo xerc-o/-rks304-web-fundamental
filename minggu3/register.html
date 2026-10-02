@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#edf0e9">
+  <title>Buat Akun</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      font-family: 'Manrope', sans-serif;
+      color: #19251f;
+      background: #edf0e9;
+      font-synthesis: none;
+      text-rendering: optimizeLegibility;
+      --ink: #19251f;
+      --muted: #69746c;
+      --line: #d9dfd7;
+      --accent: #d6fa71;
+      --error: #b43f36;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      min-width: 320px;
+      min-height: 100vh;
+      margin: 0;
+      padding: 48px 20px;
+      display: grid;
+      place-items: center;
+      background-image: radial-gradient(#cbd3c9 0.7px, transparent 0.7px);
+      background-size: 17px 17px;
+    }
+
+    main {
+      width: min(100%, 620px);
+      padding: 36px 40px 40px;
+      border: 1px solid var(--line);
+      border-top: 4px solid var(--ink);
+      background: #fbfcf8;
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--muted);
+      font: 500 11px 'DM Mono', monospace;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 30px;
+      line-height: 1.2;
+      letter-spacing: 0;
+    }
+
+    .intro {
+      margin: 9px 0 28px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    form {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 19px 16px;
+    }
+
+    .field {
+      min-width: 0;
+    }
+
+    .field-wide {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 7px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    input,
+    textarea {
+      display: block;
+      width: 100%;
+      min-height: 44px;
+      padding: 10px 12px;
+      border: 1px solid #cbd3ca;
+      border-radius: 3px;
+      outline: none;
+      background: #fff;
+      color: var(--ink);
+      font: 500 14px 'Manrope', sans-serif;
+      transition: border-color 140ms ease, box-shadow 140ms ease;
+    }
+
+    textarea {
+      min-height: 82px;
+      resize: vertical;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: #526c45;
+      box-shadow: 0 0 0 3px rgb(82 108 69 / 14%);
+    }
+
+    [aria-invalid="true"] {
+      border-color: var(--error);
+    }
+
+    .error {
+      min-height: 0;
+      margin: 5px 0 0;
+      color: var(--error);
+      font-size: 12px;
+    }
+
+    .error:empty {
+      display: none;
+    }
+
+    button {
+      grid-column: 1 / -1;
+      min-height: 48px;
+      margin-top: 3px;
+      border: 1px solid var(--ink);
+      border-radius: 3px;
+      background: var(--accent);
+      color: var(--ink);
+      font: 800 14px 'Manrope', sans-serif;
+      cursor: pointer;
+      transition: background-color 140ms ease, transform 140ms ease;
+    }
+
+    button:hover {
+      background: #c7ee59;
+      transform: translateY(-1px);
+    }
+
+    button:focus-visible {
+      outline: 3px solid #526c45;
+      outline-offset: 3px;
+    }
+
+    @media (max-width: 520px) {
+      body {
+        padding: 20px 14px;
+      }
+
+      main {
+        padding: 28px 22px 24px;
+      }
+
+      h1 {
+        font-size: 26px;
+      }
+
+      form {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .field-wide,
+      button {
+        grid-column: auto;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="eyebrow">Registrasi / 01</p>
+    <h1>Buat akun</h1>
+    <p class="intro">Isi data diri untuk melanjutkan.</p>
+
+    <form id="registerForm" action="dashboard.html" method="GET" novalidate>
+      <div class="field">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" autocomplete="username" aria-describedby="usernameError" required>
+        <p id="usernameError" class="error" aria-live="polite"></p>
+      </div>
+
+      <div class="field">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" autocomplete="new-password" aria-describedby="passwordError" required>
+        <p id="passwordError" class="error" aria-live="polite"></p>
+      </div>
+
+      <div class="field field-wide">
+        <label for="nama">Nama lengkap</label>
+        <input type="text" id="nama" name="nama" autocomplete="name" aria-describedby="namaError" required>
+        <p id="namaError" class="error" aria-live="polite"></p>
+      </div>
+
+      <div class="field">
+        <label for="tanggalLahir">Tanggal lahir</label>
+        <input type="date" id="tanggalLahir" name="tanggalLahir" aria-describedby="tanggalLahirError" required>
+        <p id="tanggalLahirError" class="error" aria-live="polite"></p>
+      </div>
+
+      <div class="field">
+        <label for="telepon">Nomor telepon</label>
+        <input type="tel" id="telepon" name="telepon" placeholder="628123456789" autocomplete="tel" inputmode="tel" aria-describedby="teleponError" required>
+        <p id="teleponError" class="error" aria-live="polite"></p>
+      </div>
+
+      <div class="field field-wide">
+        <label for="alamat">Alamat</label>
+        <textarea id="alamat" name="alamat" rows="3" autocomplete="street-address" aria-describedby="alamatError" required></textarea>
+        <p id="alamatError" class="error" aria-live="polite"></p>
+      </div>
+
+      <button type="submit">Daftar</button>
+    </form>
+  </main>
+  <script src="validasi_input.js"></script>
+</body>
+</html>
